@@ -6,18 +6,14 @@ public class App
 {
     public static void main( String[] args )
     {
-        Scanner myScan = new Scanner(System.in);
+        System.out.println("Enter a number: 10");
+        Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Print your name");
-        String name = myScan.nextLine();
+        int userVar = Integer.valueOf(scanner.nextLine());
 
-        System.out.println("Print your surname");
-        String surname = myScan.nextLine();
-
-        System.out.println("Print group which you are attended to");
-        String group = myScan.nextLine();
-
-        System.out.println("Students: " + name + " " + surname + ", grupa " + group);
+        for (int i = 0; i < userVar+1; i++){
+            System.out.println(i);
+        }
     }
 
 }
