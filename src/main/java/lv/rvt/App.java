@@ -6,14 +6,18 @@ public class App
 {
     public static void main( String[] args )
     {
-        System.out.println("Enter a number: 10");
+        int sum = 0;
+        System.out.println("Last number?");
         Scanner scanner = new Scanner(System.in);
 
-        int userVar = Integer.valueOf(scanner.nextLine());
+        int userInput = Integer.valueOf(scanner.nextLine());
 
-        for (int i = 0; i < userVar+1; i++){
-            System.out.println(i);
+        for (int i = 0; i <= userInput; i++){
+            sum = sum + i;
         }
+        
+        System.out.println("The sum is: ");
+        System.out.println(sum);
     }
 
 }
