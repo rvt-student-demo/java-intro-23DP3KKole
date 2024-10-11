@@ -21,5 +21,13 @@ public class App
         System.out.println();
 
         Stars.printTriangle(4);
+
+        System.out.println();
+
+        Stars.printRightTriangle(4);
+
+        System.out.println();
+
+        Stars.christmasTree(4);
     }
 }
