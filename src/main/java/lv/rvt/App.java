@@ -6,18 +6,20 @@ public class App
 {
     public static void main( String[] args )
     {
-        int sum = 0;
-        System.out.println("Last number?");
-        Scanner scanner = new Scanner(System.in);
+        Stars.printStars(5);
+        Stars.printStars(3);
+        Stars.printStars(9);
 
-        int userInput = Integer.valueOf(scanner.nextLine());
+        System.out.println();
 
-        for (int i = 0; i <= userInput; i++){
-            sum = sum + i;
-        }
-        
-        System.out.println("The sum is: ");
-        System.out.println(sum);
+        Stars.printSquare(4);
+
+        System.out.println();
+
+        Stars.printRectangle(17, 3);
+
+        System.out.println();
+
+        Stars.printTriangle(4);
     }
-
 }
