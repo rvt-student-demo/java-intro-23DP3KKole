@@ -1,33 +1,24 @@
 package lv.rvt;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class App 
 {
     public static void main( String[] args )
     {
-        Stars.printStars(5);
-        Stars.printStars(3);
-        Stars.printStars(9);
+        Scanner scanner = new Scanner(System.in);
+        ArrayList<String> nameList = new ArrayList<>();
 
-        System.out.println();
+        while (true){
+            String input = scanner.nextLine();
+            if(input != ""){
+                nameList.add(input);
+            }else{
+                break;
+            }
+        }
 
-        Stars.printSquare(4);
-
-        System.out.println();
-
-        Stars.printRectangle(17, 3);
-
-        System.out.println();
-
-        Stars.printTriangle(4);
-
-        System.out.println();
-
-        Stars.printRightTriangle(4);
-
-        System.out.println();
-
-        Stars.christmasTree(4);
+        System.out.println(nameList.get(2));
     }
 }
