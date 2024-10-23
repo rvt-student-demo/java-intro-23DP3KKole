@@ -8,17 +8,18 @@ public class App
     public static void main( String[] args )
     {
         Scanner scanner = new Scanner(System.in);
-        ArrayList<String> nameList = new ArrayList<>();
+        ArrayList<Integer> nameList = new ArrayList<>();
 
         while (true){
-            String input = scanner.nextLine();
-            if(input != ""){
+            int input = Integer.valueOf(scanner.nextLine());
+            if(input != 0){
                 nameList.add(input);
-            }else{
+            }else if(input == 0){
+                nameList.add(input);
                 break;
             }
         }
 
-        System.out.println(nameList.get(2));
+        System.out.println(nameList.get(1)+nameList.get(2));
     }
 }
