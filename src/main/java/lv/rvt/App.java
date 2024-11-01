@@ -7,32 +7,34 @@ public class App
 {
     public static void main( String[] args )
     {
+        int count = 0;
+        int sum = 0;
+        String userInput = "";
         Scanner scanner = new Scanner(System.in);
-        ArrayList<Integer> nameList = new ArrayList<>();
 
-        while (true){
-            int input = Integer.valueOf(scanner.nextLine());
-            if(input != -1){
-                nameList.add(input);
-            }else if(input == -1){
+        while(true){
+            userInput = scanner.nextLine();
+
+            String[] splitArr = userInput.split(",");
+            sum = sum + Integer.valueOf(splitArr[1]);
+            count++;
+
+            if (userInput == ""){
+                String longest = "";
+                for (int i = 0; i < count; i++){
+                    if (splitArr[i].length() < longest.length()){
+                        longest = splitArr[i];
+                    }
+                }
+                System.out.println("Longest name: " + longest);
                 break;
             }
         }
 
-        System.out.print("From where? ");
-        int fromWhere = Integer.valueOf(scanner.nextLine());
-        
-        System.out.print("To where? ");
-        int toWhere = Integer.valueOf(scanner.nextLine());
-
-        int listLength = nameList.size();
-
-        if (fromWhere <= 0 || toWhere >= listLength-1){
-            for (; fromWhere <= toWhere; fromWhere++){
-                System.out.println(nameList.get(fromWhere));
-            }
-        }else{
-            System.out.println("You are writing a nonexisting index");
+        if (sum > 0){
+            System.out.println("Average of the birth years: " + (1.0* sum / count));
+        } else {
+            System.out.println("Something went wrong...");
         }
     }
 }
