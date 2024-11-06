@@ -1,40 +1,23 @@
 package lv.rvt;
 
-import java.util.ArrayList;
-import java.util.Scanner;
-
 public class App 
 {
     public static void main( String[] args )
     {
-        int count = 0;
-        int sum = 0;
-        String userInput = "";
-        Scanner scanner = new Scanner(System.in);
+        Account artosAccount = new Account("Arto's account", 100.00);
+        Account artosSwissAccount = new Account("Arto's account in Switzerland", 1000000.00);
 
-        while(true){
-            userInput = scanner.nextLine();
+        System.out.println("Initial state");
+        System.out.println(artosAccount);
+        System.out.println(artosSwissAccount);
 
-            String[] splitArr = userInput.split(",");
-            sum = sum + Integer.valueOf(splitArr[1]);
-            count++;
+        artosAccount.withdraw(20);
+        System.out.println("The balance of Arto's account is now: " + artosAccount.balance());
+        artosSwissAccount.deposit(200);
+        System.out.println("The balance of Arto's other account is now: " + artosSwissAccount.balance());
 
-            if (userInput == ""){
-                String longest = "";
-                for (int i = 0; i < count; i++){
-                    if (splitArr[i].length() < longest.length()){
-                        longest = splitArr[i];
-                    }
-                }
-                System.out.println("Longest name: " + longest);
-                break;
-            }
-        }
-
-        if (sum > 0){
-            System.out.println("Average of the birth years: " + (1.0* sum / count));
-        } else {
-            System.out.println("Something went wrong...");
-        }
+        System.out.println("End state");
+        System.out.println(artosAccount);
+        System.out.println(artosSwissAccount);
     }
 }
