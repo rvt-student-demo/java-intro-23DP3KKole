@@ -1,14 +1,20 @@
 package lv.rvt;
 
+import java.io.BufferedReader;
+
 public class App 
 {
-    public static void main( String[] args )
+    public static void main( String[] args ) throws Exception
     {
-        Statistics statistics = new Statistics();
-        statistics.addNumber(3);
-        statistics.addNumber(5);
-        statistics.addNumber(1);
-        statistics.addNumber(2);
-        System.out.println("Count: " + statistics.getCount());
+        //BufferedReader reader = Helper.getReader("persons.csv");
+
+        DecreasingCounter counter = new DecreasingCounter(100);
+
+        counter.printValue();
+
+        counter.reset();
+
+        counter.decrement();
+        counter.printValue();
     }
 }
