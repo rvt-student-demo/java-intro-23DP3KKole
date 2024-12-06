@@ -20,4 +20,10 @@ public class Account {
     public void deposit(double amount){
         this.balance += amount;
     }
+
+    public void printAccount(){
+        System.out.println("Owner of the account: " + this.owner + ". Balance of the account: " + this.balance());
+    }
+
+    
 }

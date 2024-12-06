@@ -8,13 +8,16 @@ public class App
     {
         //BufferedReader reader = Helper.getReader("persons.csv");
 
-        DecreasingCounter counter = new DecreasingCounter(100);
+        Account matthewAccount = new Account("Matthew", 1000.0);
+        Account myAccount = new Account("Me", 0.0);
 
-        counter.printValue();
+        matthewAccount.withdraw(100.0);
+        myAccount.deposit(100.0);
 
-        counter.reset();
+        System.out.println(matthewAccount.toString());
+        System.out.println(myAccount.toString());
 
-        counter.decrement();
-        counter.printValue();
+        matthewAccount.printAccount();
+        myAccount.printAccount();
     }
 }
