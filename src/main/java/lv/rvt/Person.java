@@ -6,8 +6,9 @@ public class Person {
     private int age;
     private int weight;
     private int height;
+    private int address;
 
-    public Person(String name) {
+    public Person(String name, int age2, int weight2, int height2, String address) {
         this(name, 0, 0, 0);
     }
 
